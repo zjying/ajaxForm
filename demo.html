@@ -38,6 +38,7 @@
 				if (!isIE()) {//解决ie11下 input值清空会再次触发change事件
                     $(".a-upload #agent-file").val("");
                 }
+				$(".a-upload .ult").html("请点击选择上传文件");
 		    	var file = $(".a-upload").find("#agent-file");
 			    var file_ele=file.clone();//解决ie8下 input值清空无法清空
 				file.after(file_ele);
@@ -58,7 +59,6 @@
 							var resJson=eval('(' + res + ')');
 							alert(resJson);
 							clearVal();
-							$(".a-upload .ult").html("请点击选择上传文件");
 							 return  ;
 						},
 						error:function(res){
@@ -70,7 +70,6 @@
 					$("#piUploadForm").ajaxSubmit(opt);//相当于from.submit()
 					return ;
 			    }else{
-			        $(".a-upload .ult").html("请点击选择上传文件");
 			        alert("您未上传文件，或者您上传文件类型有误！");
 			      	clearVal();
 			        return false ;
